@@ -44,8 +44,9 @@ public class DetailsActivity extends AppCompatActivity implements IView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         bind = ButterKnife.bind(this);
-        EventBus.getDefault().register(DetailsActivity.this);
         presenter = new Presenter(DetailsActivity.this);
+        EventBus.getDefault().register(DetailsActivity.this);
+
 
     }
 
