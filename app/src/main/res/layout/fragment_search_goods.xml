@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SearchGoodsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffff"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/image_search_geoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/common_nav_btn_menu_n_hdpi"/>
+            <EditText
+                android:id="@+id/edit_search_geoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/image_search_geoods"
+                android:layout_toLeftOf="@id/text_search_geoods"
+                android:padding="10dp"
+                android:textColor="#8c8c8c"
+                android:maxLength="30"
+                android:lines="1"
+                android:singleLine="true"
+                android:hint="请输入你要搜索的商品"
+                android:textColorHint="#c1c1c1"
+                android:drawableLeft="@drawable/qwer"
+                android:background="@drawable/shape_gray_edit_90"/>
+            <TextView
+                android:id="@+id/text_search_geoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="20sp"
+                android:text="搜索"/>
+        </RelativeLayout>
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/xrecycle_search_geoods"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+        </com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+
+
+    </LinearLayout>
+</FrameLayout>
