@@ -22,7 +22,9 @@ public class HttpRetrofitUile {
                 .connectTimeout(20,TimeUnit.MINUTES)
                 .writeTimeout(20,TimeUnit.MINUTES)
                 .readTimeout(20,TimeUnit.MINUTES)
-                .addInterceptor(loggingInterceptor)
+                .addInterceptor(new HeaderInterHttpUtil())
+//                .addInterceptor(loggingInterceptor)
+                .addNetworkInterceptor(loggingInterceptor)
                 .build();
     }
     public static HttpRetrofitUile getInstance(){
@@ -43,7 +45,7 @@ public class HttpRetrofitUile {
                 .client(okHttpClient())
                 .build();
     }
-    public <T>T create(Class<T> clazz){
+    public <T> T create(Class<T> clazz){
         return retrofit.create(clazz);
     }
 }

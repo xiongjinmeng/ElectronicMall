@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_gray_border_20"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/simple_circle_name_sdv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:roundAsCircle="true"
+                app:placeholderImage="@drawable/loading_01"
+                app:failureImage="@drawable/image_load_failed"/>
+            <TextView
+                android:id="@+id/text_circle_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"
+                android:lines="1"
+                android:text="111"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/text_circle_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22"
+                android:lines="1"
+                android:textSize="10dp"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/text_circle_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="111111111111235666666666685363563415"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/simple_circle_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1.5"
+                app:roundedCornerRadius="10dp"
+                app:placeholderImage="@drawable/loading_01"
+                app:failureImage="@drawable/image_load_failed"/>
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recy_simple_circle_title"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+            <!--</android.support.v7.widget.RecyclerView>-->
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <CheckBox
+                android:id="@+id/button_circle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:button="@null"
+                android:background="@drawable/selector_give_a_like"
+                />
+            <TextView
+                android:id="@+id/text_a_like"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="555"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

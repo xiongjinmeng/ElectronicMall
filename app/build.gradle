@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 28
@@ -11,6 +12,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
 
+    }
+    greendao {
+        schemaVersion 1  //版本
+        daoPackage 'bawei.com.electronicmall.greendao' // 一般为app包名+生成文件的文件夹名自己建文件
+        targetGenDir 'src/main/java' //生成文件路径
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,6 +55,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
     implementation 'com.squareup.okhttp3:okhttp:3.13.1'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
+
+    implementation 'org.robolectric:multidex:3.4.2'
+    implementation 'org.greenrobot:greendao:3.2.0'
+
+    implementation 'com.blankj:utilcode:1.23.4'
 
 //    implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
 

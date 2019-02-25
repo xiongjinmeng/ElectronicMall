@@ -12,12 +12,13 @@ import java.util.ArrayList;
  * @
  */
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
-    private final ArrayList<Fragment> list;
+    private ArrayList<Fragment> list;
 
-    public MyFragmentPagerAdapter(FragmentManager fm, ArrayList<Fragment> fragment) {
+    public MyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
-        this.list=fragment;
     }
+
+
 
     @Override
     public Fragment getItem(int i) {
@@ -27,5 +28,13 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return list.size();
+    }
+
+    public void setList(ArrayList<Fragment> fragment) {
+        this.list=fragment;
+    }
+
+    public void setShop(ArrayList<Fragment> fragment) {
+        this.list=fragment;
     }
 }

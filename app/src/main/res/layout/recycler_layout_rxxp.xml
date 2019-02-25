@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:padding="5dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:background="@drawable/shape_gray_border_20"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/image_grid"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:roundedCornerRadius="10dp"
+            app:actualImageScaleType="fitXY"
+            app:roundTopLeft="true"
+            app:roundTopRight="true"
+            app:roundBottomLeft="true"
+            app:roundBottomRight="true"
+            app:placeholderImage="@mipmap/ic_launcher"/>
+        <TextView
+            android:id="@+id/text_grid_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:layout_marginTop="5dp"
+            android:lines="1"
+            android:text="111"/>
+        <TextView
+            android:id="@+id/text_grid_pras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#FF0E0E"
+            android:lines="1"
+            android:text="222"/>
+
+    </LinearLayout>
+</LinearLayout>

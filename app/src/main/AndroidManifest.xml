@@ -35,7 +35,8 @@
         <!-- <meta-data -->
         <!-- android:name="notch.config" -->
         <!-- android:value="portrait|landscape" /> -->
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".RegisteredActivity"></activity>
     </application>
 
 </manifest>

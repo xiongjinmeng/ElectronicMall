@@ -1,5 +1,7 @@
 package bawei.com.electronicmall.mvp.molder;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -35,10 +37,122 @@ public class Molder {
                     public void onNext(ResponseBody responseBody) {
                         try {
                             String string = responseBody.string();
+                            Log.e("--------",string);
                             Gson gson = new Gson();
                             Object o = gson.fromJson(string, aClass);
                             iMolder.onSuccessful(o);
                         } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iMolder.onError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void postone(String login, Map<String, String> map, Class aClass, IMolder iMolder) {
+        HttpRetrofitUile.getInstance().create(WayApi.class).post(login,map)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        String string = null;
+                        try {
+                            string = responseBody.string();
+//                            Log.e("--------",string);
+                            Gson gson = new Gson();
+                            Object o = gson.fromJson(string, aClass);
+                            iMolder.onSuccessful(o);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iMolder.onError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    public void deleteone(String praiseCancel, Map<String, String> map, Class aClass, IMolder iMolder) {
+        HttpRetrofitUile.getInstance().create(WayApi.class).delete(praiseCancel,map)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        String string = null;
+                        try {
+                            string = responseBody.string();
+//                            Log.e("--------",string);
+                            Gson gson = new Gson();
+                            Object o = gson.fromJson(string, aClass);
+                            iMolder.onSuccessful(o);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iMolder.onError(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+    public void put(String url, Map<String, String> map, Class aClass, IMolder iMolder) {
+        HttpRetrofitUile.getInstance().create(WayApi.class).put(url,map)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        String string = null;
+                        try {
+                            string = responseBody.string();
+                            Log.e("--------",string);
+                            Gson gson = new Gson();
+                            Object o = gson.fromJson(string, aClass);
+                            iMolder.onSuccessful(o);
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }

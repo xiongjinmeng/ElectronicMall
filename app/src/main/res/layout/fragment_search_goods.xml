@@ -49,13 +49,36 @@
                 android:textSize="20sp"
                 android:text="搜索"/>
         </RelativeLayout>
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/xrecycle_search_geoods"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="5dp">
+            android:layout_height="match_parent">
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/xrecycle_search_geoods"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+            </com.jcodecraeer.xrecyclerview.XRecyclerView>
+            <LinearLayout
+                android:id="@+id/linear_search_geoods_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/aaa"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="25sp"
+                    android:text="没有要搜索的商品"/>
+            </LinearLayout>
 
-        </com.jcodecraeer.xrecyclerview.XRecyclerView>
+        </RelativeLayout>
+
 
 
 

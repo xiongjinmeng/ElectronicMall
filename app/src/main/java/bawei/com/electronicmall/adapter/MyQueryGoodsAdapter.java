@@ -15,6 +15,7 @@ import java.util.List;
 
 import bawei.com.electronicmall.R;
 import bawei.com.electronicmall.bean.SearchGoodsBean;
+import bawei.com.electronicmall.daobean.SearchGoodsFragmentdaobean;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -25,6 +26,7 @@ import butterknife.ButterKnife;
  */
 public class MyQueryGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Context context;
+//    private final List<SearchGoodsFragmentdaobean> list;
     private final List<SearchGoodsBean.ResultBean> list;
 
     public MyQueryGoodsAdapter(Context context, List<SearchGoodsBean.ResultBean> list) {
