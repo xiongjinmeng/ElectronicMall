@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -38,7 +40,7 @@ public class MyQueryGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_query_goods_fragment_list, viewGroup, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_query_goods_fragment_list, viewGroup, false);
         return new MyHolder(view);
     }
 
@@ -51,7 +53,14 @@ public class MyQueryGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             double price = list.get(i).getPrice();
             String name = list.get(i).getCommodityName();
             int saleNum = list.get(i).getSaleNum();
-            holder.simpleQueryGoods.setImageURI(Uri.parse(masterPic));
+            //重试,创建DraweeController对象
+            Uri parse = Uri.parse(masterPic);
+            DraweeController controller = Fresco.newDraweeControllerBuilder()
+                    .setUri(parse)//URL地址
+                    .setTapToRetryEnabled(true)//开启点击重试
+                    .setOldController(holder.simpleQueryGoods.getController())
+                    .build();//构建
+            holder.simpleQueryGoods.setController(controller);
             holder.textTitleQueryGoods.setText(name);
             holder.textPriceQueryGoods.setText("￥"+price);
             holder.textNumberQueryGoods.setText("已售"+saleNum+"件");

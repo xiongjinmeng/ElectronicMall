@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_rectangle_5"
+        android:padding="10dp">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/simp_myfootp_image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            app:roundedCornerRadius="10dp" />
+        <TextView
+            android:id="@+id/text_myfootp_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="11111111"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_myfootp_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#cc0000"
+                android:text="222222"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/text_myfootp_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="33333"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/text_myfootp_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="444444"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

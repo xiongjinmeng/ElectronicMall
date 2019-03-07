@@ -12,6 +12,9 @@ public class DetailsEvent {
         this.num = num;
     }
 
+    public DetailsEvent() {
+    }
+
     public String getNum() {
         return num;
     }

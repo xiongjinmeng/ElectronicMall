@@ -67,6 +67,15 @@ public class ClassifBean {
         private String nickName;
         private int userId;
         private int whetherGreat;
+        private boolean isCheck;
+
+        public boolean isCheck() {
+            return isCheck;
+        }
+
+        public void setCheck(boolean check) {
+            isCheck = check;
+        }
 
         public int getCommodityId() {
             return commodityId;

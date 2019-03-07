@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/shape_gray_border_20">
+        <TextView
+            android:id="@+id/text_determine"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:text="修改信息"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000000"/>
+        <TextView
+            android:id="@+id/text_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:text="取消"/>
+    </LinearLayout>
+
+</LinearLayout>

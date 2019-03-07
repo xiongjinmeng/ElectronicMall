@@ -57,6 +57,15 @@ public class QueryShoppingCartBean {
         private int count;
         private String pic;
         private double price;
+        private boolean isCheck;
+
+        public boolean isCheck() {
+            return isCheck;
+        }
+
+        public void setCheck(boolean check) {
+            isCheck = check;
+        }
 
         public int getCommodityId() {
             return commodityId;

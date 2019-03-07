@@ -25,6 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import bawei.com.electronicmall.bean.LoginRegisteredBean;
+import bawei.com.electronicmall.event.MyUserEvent;
 import bawei.com.electronicmall.event.RegisterEvent;
 import bawei.com.electronicmall.mvp.presenter.Presenter;
 import bawei.com.electronicmall.mvp.view.IView;
@@ -166,6 +167,9 @@ public class LoginActivity extends AppCompatActivity implements IView {
                 edit.putString("sessionId",sessionId);
                 edit.putString("userId",userId);
                 edit.commit();
+                String nickName = bean.getResult().getNickName();
+                String headPic = bean.getResult().getHeadPic();
+                EventBus.getDefault().postSticky(new MyUserEvent(headPic,nickName));
                 Intent intent = new Intent(LoginActivity.this, ShopActivity.class);
                 startActivity(intent);
             } else {

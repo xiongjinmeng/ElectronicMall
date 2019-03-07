@@ -60,7 +60,7 @@ public class ClassifFragment extends Fragment implements IView {
         EventBus.getDefault().register(this);
         Map<String,String> map = new HashMap<>();
         map.put("page","1");
-        map.put("count","20");
+        map.put("count","50");
         getDate(map);
         return view;
     }
@@ -108,21 +108,13 @@ public class ClassifFragment extends Fragment implements IView {
                 List<ClassifBean.ResultBean> list = bean.getResult();
                 if (list == null) {
                     Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
                 } else {
-                    for (int i = 0; i < list.size(); i++) {
-                        String image = list.get(i).getImage();
-                        if (image.equals("")) {
-                            list.remove(i);
-                        } else if (image.equals("mp4")){
-                            list.remove(i);
-                        } else {
-                            MyCircleAdapter adapter = new MyCircleAdapter(getActivity(), list);
-                            xrecycleClassifFrag.setAdapter(adapter);
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                            linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                            xrecycleClassifFrag.setLayoutManager(linearLayoutManager);
-                        }
-                    }
+                    MyCircleAdapter adapter = new MyCircleAdapter(getActivity(), list);
+                    xrecycleClassifFrag.setAdapter(adapter);
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+                    linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    xrecycleClassifFrag.setLayoutManager(linearLayoutManager);
                 }
             } else {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();

@@ -31,6 +31,7 @@ public class App extends Application {
                 .setMainDiskCacheConfig(images)
                 .build();
         Fresco.initialize(this,config);
+//        Fresco.initialize(this);
         ShadowMultiDex.install(this);
         setDatabase();
 

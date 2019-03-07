@@ -88,6 +88,7 @@ public class MyHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
         if (viewHolder instanceof Hodler1){
             Hodler1 hodler1 = (Hodler1) viewHolder;
             Map<String,String> map = new HashMap<>();
@@ -146,10 +147,10 @@ public class MyHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         } else if (viewHolder instanceof Hodler2){
             Hodler2 hodler2 = (Hodler2) viewHolder;
             //热销新品
-            for (int j = 0; j < list.getRxxp().size(); j++) {
-                final String id = list.getRxxp().get(j).getId() + "";
-                String name = list.getRxxp().get(j).getName();
-                List<GoodsListBean.ResultBean.RxxpBean.CommodityListBean> rxxpList = list.getRxxp().get(j).getCommodityList();
+                final String id = this.list.getRxxp().getId() + "";
+                String name = this.list.getRxxp().getName();
+                List<GoodsListBean.ResultBean.RxxpBean.CommodityListBean> rxxpList = this.list.getRxxp().getCommodityList();
+
                 hodler2.text_recycler_rxxp.setText(name);
                 hodler2.text_recycler_rxxp.setTextColor(Color.parseColor("#FF7F57"));
                 hodler2.image_recycler_backg.setImageResource(R.mipmap.bitmapone);
@@ -167,15 +168,12 @@ public class MyHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     }
                 });
 
-            }
-
         } else if (viewHolder instanceof Hodler3){
             Hodler3 hodler3 = (Hodler3) viewHolder;
             //魔力时尚
-            for (int j = 0; j < list.getMlss().size(); j++) {
-                final String id = list.getMlss().get(j).getId() + "";
-                String name2 = list.getMlss().get(j).getName();
-                List<GoodsListBean.ResultBean.MlssBean.CommodityListBeanXX> mlssList = list.getMlss().get(j).getCommodityList();
+                final String id = this.list.getMlss().getId() + "";
+                String name2 = this.list.getMlss().getName();
+                List<GoodsListBean.ResultBean.MlssBean.CommodityListBeanXX> mlssList = this.list.getMlss().getCommodityList();
                 hodler3.text_recycler_rxxp.setText(name2);
                 hodler3.text_recycler_rxxp.setTextColor(Color.parseColor("#7D7FF6"));
                 hodler3.image_recycler_backg.setImageResource(R.mipmap.bitmap);
@@ -192,15 +190,13 @@ public class MyHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         EventBus.getDefault().post(new GoodsBeanEvent(name2,id));
                     }
                 });
-            }
 
         }if (viewHolder instanceof Hodler4){
             Hodler4 hodler4 = (Hodler4) viewHolder;
             //品质生活
-            for (int j = 0; j < list.getPzsh().size(); j++) {
-                final String id = list.getPzsh().get(j).getId() + "";
-                String name1 = list.getPzsh().get(j).getName();
-                List<GoodsListBean.ResultBean.PzshBean.CommodityListBeanX> pzshList = list.getPzsh().get(j).getCommodityList();
+                final String id = this.list.getPzsh().getId() + "";
+                String name1 = this.list.getPzsh().getName();
+                List<GoodsListBean.ResultBean.PzshBean.CommodityListBeanX> pzshList = this.list.getPzsh().getCommodityList();
                 hodler4.text_recycler_rxxp.setText(name1);
                 hodler4.text_recycler_rxxp.setTextColor(Color.parseColor("#FF5F71"));
                 hodler4.image_recycler_backg.setImageResource(R.mipmap.bitmaptwo);
@@ -219,7 +215,6 @@ public class MyHomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 });
             }
         }
-    }
 
     @Override
     public int getItemCount() {

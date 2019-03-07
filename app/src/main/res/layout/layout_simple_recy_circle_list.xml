@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="vertical">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/simple_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:placeholderImage="@drawable/loading_01"
+        app:failureImage="@drawable/image_load_failed"
+        app:roundedCornerRadius="10dp"
+        app:viewAspectRatio="0.7"/>
+</LinearLayout>

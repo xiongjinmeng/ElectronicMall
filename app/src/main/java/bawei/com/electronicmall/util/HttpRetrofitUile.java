@@ -23,7 +23,7 @@ public class HttpRetrofitUile {
                 .writeTimeout(20,TimeUnit.MINUTES)
                 .readTimeout(20,TimeUnit.MINUTES)
                 .addInterceptor(new HeaderInterHttpUtil())
-//                .addInterceptor(loggingInterceptor)
+                .addInterceptor(loggingInterceptor)
                 .addNetworkInterceptor(loggingInterceptor)
                 .build();
     }

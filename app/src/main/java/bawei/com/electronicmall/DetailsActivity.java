@@ -132,7 +132,7 @@ public class DetailsActivity extends AppCompatActivity implements IView {
             String message = cartBean.getMessage();
             if (status.equals(ConditionsUtil.CONDITIO)){
                 if (cartBean.getResult()==null){
-                    Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "已加入购物车", Toast.LENGTH_SHORT).show();
 
                 } else {
                     List<QueryShoppingCartBean.ResultBean> shoppinglist = cartBean.getResult();
@@ -233,6 +233,7 @@ public class DetailsActivity extends AppCompatActivity implements IView {
                             Glide.with(DetailsActivity.this).load(strings.get(position)).into((ImageView) view);
                         }
                     });
+//                    webviewDetails.loadData(details, "text/html", "UTF-8");
                     webviewDetails.loadDataWithBaseURL(null, details, "text/html", "UTF-8", null);
                     //支持屏幕缩放
                     webviewDetails.getSettings().setSupportZoom(true);
@@ -253,7 +254,8 @@ public class DetailsActivity extends AppCompatActivity implements IView {
                 }
 
             } else {
-                Toast.makeText(DetailsActivity.this, message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailsActivity.this, "无效链接", Toast.LENGTH_SHORT).show();
+            finish();
             }
 
         } else if (date instanceof CommentBean){

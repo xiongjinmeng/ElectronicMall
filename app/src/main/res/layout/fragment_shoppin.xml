@@ -2,13 +2,76 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent"
     tools:context=".fragment.ShoppinFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/xrecycle_shoppin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:layout_weight="0.8">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_weight="7">
+
+                <CheckBox
+                    android:id="@+id/check_box_shoppin"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:button="@null"
+                    android:background="@drawable/selector_shoppin_add_delsa"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="全选"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="合计："/>
+                <TextView
+                    android:id="@+id/text_price_shoppin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF4C4C"
+                    android:textSize="20sp"
+                    android:text="0.00"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/button_shoppin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="#FF5F71"
+                android:textColor="#ffffff"
+                android:text="去结算"/>
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"/>
+    </LinearLayout>
 
 </FrameLayout>

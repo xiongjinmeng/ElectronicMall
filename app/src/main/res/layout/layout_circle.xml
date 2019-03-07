@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="111111111111235666666666685363563415"/>
         <RelativeLayout
+            android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <com.facebook.drawee.view.SimpleDraweeView
@@ -60,12 +61,12 @@
                 app:roundedCornerRadius="10dp"
                 app:placeholderImage="@drawable/loading_01"
                 app:failureImage="@drawable/image_load_failed"/>
-            <!--<android.support.v7.widget.RecyclerView-->
-                <!--android:id="@+id/recy_simple_circle_title"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy_simple_circle_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <!--</android.support.v7.widget.RecyclerView>-->
+            </android.support.v7.widget.RecyclerView>
 
 
         </RelativeLayout>
@@ -81,8 +82,8 @@
                 android:layout_weight="1"/>
             <CheckBox
                 android:id="@+id/button_circle"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:button="@null"
                 android:background="@drawable/selector_give_a_like"
                 />

@@ -63,7 +63,13 @@ public class ShopActivity extends AppCompatActivity {
         fragment.add(new MymallFragment());
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         adapter.setShop(fragment);
-        viewpagerShop.setAdapter(adapter);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                viewpagerShop.setAdapter(adapter);
+            }
+        });
+
         getDate();
     }
 
@@ -125,7 +131,7 @@ public class ShopActivity extends AppCompatActivity {
         });
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onDxx(String s){
+    public void esentry(String s){
 
     }
     @Override
